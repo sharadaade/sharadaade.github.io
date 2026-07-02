@@ -31,3 +31,6 @@ body {
 .footer {
     color: white;
 }
+.display-3 {
+    border: none !important;
+}
