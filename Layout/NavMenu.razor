@@ -7,38 +7,44 @@
 
         <button class="navbar-toggler"
                 type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNavAltMarkup">
+                @onclick="ToggleNavMenu">
 
-            <span class="navbar-toggler-icon"></span>
+            @if (collapseNavMenu)
+            {
+                <i class="bi bi-list"></i>
+            }
+            else
+            {
+                <i class="bi bi-x-lg"></i>
+            }
 
         </button>
 
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <div class="@NavMenuCssClass navbar-collapse justify-content-end">
 
-            <div class="navbar-nav">
+            <div class="navbar-nav ms-auto text-end">
 
-                <NavLink class="nav-link" href="/" Match="NavLinkMatch.All">
+                <NavLink class="nav-link" href="/" Match="NavLinkMatch.All" @onclick="CloseMenu">
                     Home
                 </NavLink>
 
-                <NavLink class="nav-link" href="/skills">
+                <NavLink class="nav-link" href="/skills" @onclick="CloseMenu">
                     Skills
                 </NavLink>
 
-                <NavLink class="nav-link" href="/certifications">
+                <NavLink class="nav-link" href="/certifications" @onclick="CloseMenu">
                     Certifications
                 </NavLink>
 
-                <NavLink class="nav-link" href="/projects">
+                <NavLink class="nav-link" href="/projects" @onclick="CloseMenu">
                     Projects
                 </NavLink>
 
-                <NavLink class="nav-link" href="/education">
+                <NavLink class="nav-link" href="/education" @onclick="CloseMenu">
                     Education
                 </NavLink>
 
-                <NavLink class="nav-link" href="/contact">
+                <NavLink class="nav-link" href="/contact" @onclick="CloseMenu">
                     Contact
                 </NavLink>
 
@@ -48,3 +54,20 @@
 
     </div>
 </nav>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string NavMenuCssClass =>
+        collapseNavMenu ? "collapse" : "show";
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+
+    private void CloseMenu()
+    {
+        collapseNavMenu = true;
+    }
+}
