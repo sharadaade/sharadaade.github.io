@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #002147;
+    color: white;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.text-start {
+    padding: 150px 0px 0px 100px;
+}
+
+#getresume:hover {
+    background-color: #98000F;
+}
+.footer {
+    color: white;
+}

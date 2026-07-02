@@ -1,3 +1,23 @@
 ﻿@inherits LayoutComponentBase
 
-@Body
+<NavMenu />
+
+<div class="container pt-3">
+    <main class="pb-3 pt-5">
+        @Body
+    </main>
+</div>
+
+<footer class="footer mt-4">
+    <div class="container text-center">
+        &copy; @DateTime.Now.Year AutumnHQ Labs, Inc.
+    </div>
+</footer>
+
+@* <footer class="footer mt-4 py-3 border-top"
+        style="color:black; background-color:white;">
+    <div class="container text-center">
+        © @DateTime.Now.Year AutumnHQ Labs, Inc.
+    </div> 
+</footer>
+*@
