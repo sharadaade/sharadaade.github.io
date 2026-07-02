@@ -3,7 +3,9 @@ name: Deploy Blazor WebAssembly to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - master
+
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -37,7 +39,6 @@ jobs:
 
   deploy:
     needs: build
-
     runs-on: ubuntu-latest
 
     environment:
